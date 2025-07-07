@@ -4,19 +4,17 @@ library(shinydashboard)
 library(ggplot2)
 library(dplyr)
 library(readr)
-library(GeoLift) # Make sure this package is installed
-library(plotly) # New: For interactive plots
+library(GeoLift) 
+library(plotly) 
 
 # Define UI for Geo-Lift Study dashboard
 ui <- dashboardPage(
-  skin = "black", # Added skin = "black" here
+  skin = "black", 
   dashboardHeader(
     title = tagList(
       span(
         # Styling for the dashboard header title
-        style = "color: black;", # Changed title font color back to white
-        # Placeholder for the logo. You should place 'canvas_white.png' in a 'www' folder
-        # within your app directory.
+        style = "color: black;",
         tags$img(src = "canvas_white.png", height = "30px", style = "margin-right: 10px;"),
         "Geo-Lift" # Changed title text here
       )
@@ -180,12 +178,12 @@ server <- function(input, output, session) {
       selectInput("date_var", "Select Date Variable:", choices = data_cols)
     })
     
-    # New: Experiment Period Start and End selectors
+    # Experiment Period Start and End selectors
     output$experiment_period_start_selector <- renderUI({
-      numericInput("experiment_period_start", "Experiment Duration:", value = 91, min = 1) # Label changed
+      numericInput("experiment_period_start", "Experiment Duration:", value = 91, min = 1) 
     })
     output$experiment_period_end_selector <- renderUI({
-      numericInput("experiment_period_end", "Second Experiment Duration (optional):", value = 105, min = 1) # Label changed
+      numericInput("experiment_period_end", "Second Experiment Duration (optional):", value = 105, min = 1) 
     })
     
     # Number of desired locations
