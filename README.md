@@ -1,2 +1,2 @@
 # Shiny_GeoLift
-Creating GeoLift by Meta platform using Shiny 
+Creating a Shiny app using GeoLift by Meta  
